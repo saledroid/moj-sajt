@@ -12,7 +12,10 @@
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-blue-600">S–ELECTRONIC</h1>
-      <nav class="space-x-6">
+      <button id="menu-toggle" class="md:hidden text-blue-600 focus:outline-none text-2xl">
+        ☰
+      </button>
+      <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6">
         <a href="#usluge" class="hover:text-blue-600">Usluge</a>
         <a href="#onama" class="hover:text-blue-600">O nama</a>
         <a href="#kontakt" class="hover:text-blue-600">Kontakt</a>
@@ -21,47 +24,40 @@
   </header>
 
   <!-- Hero sekcija -->
-  <section class="bg-blue-600 text-white py-20 text-center">
-    <h2 class="text-4xl font-bold mb-4">Servis i montaža tehnike</h2>
-    <p class="text-lg mb-6">Računari, telefoni, video nadzor, alarmi i vatrodojava – sve na jednom mjestu!</p>
+  <section class="bg-blue-600 text-white py-20 text-center px-4">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Servis i montaža tehnike</h2>
+    <p class="text-lg md:text-xl mb-6">Računari, telefoni, video nadzor, alarmi i vatrodojava – sve na jednom mjestu!</p>
     <a href="#kontakt" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Zatraži ponudu</a>
   </section>
 
   <!-- Sekcija Usluge -->
   <section id="usluge" class="max-w-7xl mx-auto py-16 px-4">
     <h3 class="text-3xl font-bold text-center mb-10">Naše Usluge</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Servis računara</h4>
         <p>Popravka desktop i laptop računara, zamena delova, instalacija sistema i više.</p>
       </div>
-
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Servis telefona</h4>
         <p>Popravka ekrana, baterija, softverske greške, otključavanje i drugo.</p>
       </div>
-
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Dijagnostika</h4>
         <p>Brza dijagnostika problema besplatno ako se odlučite za popravku kod nas.</p>
       </div>
-
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Montaža video nadzora</h4>
         <p>Profesionalna ugradnja sigurnosnih kamera za kuće, firme i poslovne prostore.</p>
       </div>
-
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Alarmni sistemi</h4>
         <p>Instalacija i podešavanje alarmnih sistema za zaštitu imovine i objekata.</p>
       </div>
-
       <div class="bg-white shadow p-6 rounded-xl">
         <h4 class="text-xl font-semibold mb-2">Sistemi vatrodojave</h4>
         <p>Postavljanje detektora dima i sistema za rano upozorenje na požar.</p>
       </div>
-
     </div>
   </section>
 
@@ -99,6 +95,15 @@
   <footer class="bg-white border-t py-6 mt-10 text-center text-sm text-gray-600">
     © 2025 S–ELECTRONIC. Sva prava zadržana.
   </footer>
+
+  <!-- JS za mobilni meni -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
